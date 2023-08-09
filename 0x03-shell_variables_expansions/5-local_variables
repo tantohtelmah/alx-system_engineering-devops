@@ -1,2 +1,2 @@
 #!/bin/bash
-set | grep "^[[:alpha:]_] [[:alnum:]_]*=" env declare -F 
+set -o posix set
