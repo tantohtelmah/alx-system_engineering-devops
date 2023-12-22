@@ -2,17 +2,15 @@
 #displays the time for 12 hours and 59 minutes
 hours=0
 minutes=1
+echo "Hour: $hours"
 while [ "$hours" -le 12 ]; do
-	if [ "$hours" ==  0 ]; then
-		echo "Hour: 0"
-	fi
     while [ "$minutes" -le 59 ]; do
         echo "$minutes"
         ((minutes++))
     done
     ((hours++))
 	if [ "$hours" == 1 ]; then
-		echo "Hour: 1"
+		echo "Hour: $hours"
 	fi
     minutes=1
 done | head -n 70
