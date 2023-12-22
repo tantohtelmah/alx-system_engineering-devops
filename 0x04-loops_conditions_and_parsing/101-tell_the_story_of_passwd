@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#reads /etc/passwd line by line
+IFS=":"
+while read -r username _ uid _ home _ shell; do
+    echo "The user $username is part of the group $uid gang,"
+    echo "lives in $home, and rides $shell."
+    echo "USER ID's place is protected by the passcode PASSWORD."
+    echo "More info about the user here: USER ID INFO"
+    echo
+done < /etc/passwd
