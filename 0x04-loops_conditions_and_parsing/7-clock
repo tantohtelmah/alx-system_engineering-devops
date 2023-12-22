@@ -9,7 +9,7 @@ while [ "$hours" -le 12 ]; do
         ((minutes++))
     done
     ((hours++))
-	if [ "$hours" == 1]; then
+	if [ "$hours" == 1 ]; then
 		echo "Hour: 1"
 	fi
     minutes=1
