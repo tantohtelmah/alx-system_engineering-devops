@@ -15,4 +15,4 @@ while [ "$hours" -le 12 ]; do
 		echo "Hour: 1"
 	fi
     minutes=1
-done | head -n 69
+done | head -n 70
