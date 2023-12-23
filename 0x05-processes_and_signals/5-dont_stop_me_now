@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2009
+#stops an infinite code
+./4-to_infinity_and_beyond &
+PID=$!
+sleep 5
+kill "$PID"
+echo "Terminated."
