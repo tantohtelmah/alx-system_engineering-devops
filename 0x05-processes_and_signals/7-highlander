@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2009
+# Set up the SIGTERM handler
+handle_sigterm() {
+    echo "I am invincible!!!"
+    exit 0
+}
+trap 'handle_sigterm' SIGTERM
+
+# Display "To infinity and beyond" indefinitely
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+    echo "To infinity and beyond"
+    sleep 2
+    echo "I am invincible!!!"
+done
