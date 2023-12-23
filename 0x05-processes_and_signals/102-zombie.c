@@ -3,10 +3,12 @@
 #include <unistd.h>
 #include <stdio.h>
 
+
+int infinite_while(void);
 /**
- * main - main entry
- * @void: void
- * Return: int
+* main - main entry
+* @void: void
+* Return: int
 */
 int main(void)
 {
@@ -26,7 +28,22 @@ int main(void)
 			printf("Zombie process created, PID: %d\n", child_pid);
 		}
 	}
+	infinite_while();
 	sleep(10);
 
+	return (0);
+}
+
+/**
+* infinite_while - infinite while function
+* @void: void
+* Return: int
+*/
+int infinite_while(void)
+{
+	while (1)
+	{
+		sleep(1);
+	}
 	return (0);
 }
