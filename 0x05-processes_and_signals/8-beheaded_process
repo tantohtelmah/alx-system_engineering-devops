@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2009
+# Find the PID of the process named "7-highlander"
+highlander_pid=$(pgrep -f "7-highlander")
+
+if [ -n "$highlander_pid" ]; then
+    echo "Highlander process found with PID $highlander_pid. Terminating..."
+    kill "$highlander_pid"
+else
+    echo "Highlander process not found."
+fi
