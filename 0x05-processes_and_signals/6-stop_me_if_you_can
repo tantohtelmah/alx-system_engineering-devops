@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2009
+#stops infinite loop without "kill"
+finish=0
+handle_signal() {
+    echo "Received termination signal. Stopping the loop."
+    finish=1
+}
+trap 'handle_signal' SIGTERM
+while ((finish != 1)); do
+    ./4-to_infinity_and_beyond
+    sleep 2
+done
+echo "Loop terminated."
