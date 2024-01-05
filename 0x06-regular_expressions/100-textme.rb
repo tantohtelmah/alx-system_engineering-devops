@@ -7,4 +7,4 @@ match1 = /(?<=to:)[^\]]+/.match(text)
 match2 = /(?<=flags:)[^\]]+/.match(text)
 
 # Print the extracted text
-puts match[0], match1[0], match2[0]
+puts "#{match},#{match1},#{match2}"
