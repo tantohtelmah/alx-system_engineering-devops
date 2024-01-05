@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 
-puts ARGV[0].scan(/\[from:(\w+|\+\d{11})\]\s\[to:(\w+|\+\d{10})\]\s\[flags:-?\d:-?\d:-?\d:-?\d:-?\d\]/).join
+# Extract the text after "from"
+text = ARGV[0]
+match = /(?<=from:)[^\]]+/.match(text)
+
+# Print the extracted text
+puts match[0]
