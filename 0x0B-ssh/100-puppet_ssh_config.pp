@@ -5,7 +5,7 @@ file { '/home/kinyuy/.ssh/config':
   content => "
     Host 34.227.93.37
         IdentityFile ~/.ssh/school
-        PasswordAuthentication yes
+        PasswordAuthentication no
   ",
 }
 
