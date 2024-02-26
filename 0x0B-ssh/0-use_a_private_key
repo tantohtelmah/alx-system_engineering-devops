@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #connecting to the server
 SERVER_HOST="18.206.207.91"
 ssh -i ~/.ssh/school ubuntu@"$SERVER_HOST"
