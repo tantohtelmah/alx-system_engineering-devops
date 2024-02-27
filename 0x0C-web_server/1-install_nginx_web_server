@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Install Nginx
+apt-get update
+apt-get install -y nginx
+
+# Configure Nginx
+cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        types {}
+        default_type text/html;
+        return 200 '<html><body>Hello World</body></html>';
+    }
+}
+EOF
+
+# Disable strict host key checking for scp
+echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+
+# Restarting Nginx (without using systemctl)
+service nginx restart
+
+echo "Nginx installed and configured successfully!"
