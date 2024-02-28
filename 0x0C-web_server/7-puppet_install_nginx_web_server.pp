@@ -15,4 +15,3 @@ nginx::resource::server { 'default':
     'return' => '301 https://www.youtube.com/watch?v=QH2-TGUlwu4',
   },
 }
-
