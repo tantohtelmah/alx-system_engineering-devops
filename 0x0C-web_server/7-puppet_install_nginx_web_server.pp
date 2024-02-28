@@ -9,8 +9,8 @@ class { 'nginx':
 # Create a custom Nginx configuration for the 301 redirect
 nginx::resource::server { 'default':
   listen_port => 80,
-  server_name => '_',
-  location    => '/',
+  server_name => '18.206.207.91',
+  location    => '/redirect_me',
   location_custom_cfg => {
     'return' => '301 https://www.youtube.com/watch?v=QH2-TGUlwu4',
   },
