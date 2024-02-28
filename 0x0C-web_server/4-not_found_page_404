@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# configuration snippet for the custom error page
+sudo mkdir -p /etc/nginx/snippets/
+sudo touch /etc/nginx/snippets/custom-error-page.conf
+
+# inside custom-error-page.conf
+cat <<EOF > /etc/nginx/snippets/custom-error-page.conf
+error_page 404 /404.html;
+location = /404.html {
+    root /var/www/html;
+    internal;
+}
+EOF
+
+cat <<EOF > /etc/nginx/sites-enabled/default
+server {
+
+    include snippets/custom-error-page.conf;
+}
+EOF
+# Testing the configuration
+sudo nginx -t
+
+# Restarting Nginx (without using systemctl)
+service nginx restart
