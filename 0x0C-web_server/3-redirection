@@ -5,18 +5,18 @@
 cat <<EOF > /etc/nginx/conf.d/redirect_me.conf
 server {
     listen 80;
+	 listen [::]:80;
     server_name _;
 
     location = /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 
-    # Add other server blocks or configurations as needed
 }
 EOF
 
-# TESTING AND RELOADING
-sudo nginx -t
+# # TESTING AND RELOADING
+# sudo nginx -t
 
-# Restarting Nginx (without using systemctl)
-service nginx restart
+# # Restarting Nginx (without using systemctl)
+# service nginx restart
