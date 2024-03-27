@@ -1,4 +1,6 @@
+#!/usr/bin/pup
 # Create SSH configuration file
+include stdlib
 
 file { '/home/kinyuy/.ssh/config':
   ensure  => present,
